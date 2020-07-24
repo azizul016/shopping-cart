@@ -130,10 +130,15 @@
         const minusBtn = document.getElementById("minusBtn");
         minusBtn.addEventListener("click", function () {
             //When minusBtn clicked then Item no decrease;
+           if(document.getElementById("plusInput").value <= 0){
+              alert("Negative value is not received")
+           }
+           else{
             clickMinusBtn("plusInput")
             decreasePrice("singlePrice");
             decreasePrice("subTotal");
             decreasePrice("subTotalSecond");
+           }
         })
 
         //One part complete;
@@ -187,12 +192,17 @@
 
         const minusBtnSecond = document.getElementById("minusBtnSecond");
         minusBtnSecond.addEventListener("click", function () {
-
+            if(document.getElementById("minusInput").value <= 0){
+               alert("Negative value is not received")
+            }
+            else{
+               clickMinusBtn("minusInput")
+               decreasePriceSecond("singlePriceSecond")
+               decreasePriceSecondTotal("subTotal");
+               decreasePriceSecondTotal("subTotalSecond");
+            }
             //When minusBtn clicked then Item no decrease;
-            clickMinusBtn("minusInput")
-            decreasePriceSecond("singlePriceSecond")
-            decreasePriceSecondTotal("subTotal");
-            decreasePriceSecondTotal("subTotalSecond");
+           
         })
    </script>
 </body>
